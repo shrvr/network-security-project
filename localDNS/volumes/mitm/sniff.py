@@ -37,7 +37,8 @@ def get_credentials(packet):
 def process_packet(packet):
     if packet.haslayer(http.HTTPRequest):
         url = get_url(packet)
-        print('[+] HTTP Requests/URL Requested -> {}'.format(url), '\n')
+        src = packet.getlayer(scapy.IP).src
+        print('[+] HTTP Requests/URL Requested -> {}'.format(url)+ '\n'+ str(src))
         cred = get_credentials(packet)
         if cred:
             print('\n\n[+] Possible Credential Information -> {}'.format(cred), '\n\n')

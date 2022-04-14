@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 from scapy.all import *
 
+
+
 def spoof_dns(pkt):
   if (DNS in pkt and 'www.example.com' in pkt[DNS].qd.qname.decode('utf-8')):
     pkt.show()

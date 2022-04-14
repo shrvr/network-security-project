@@ -94,8 +94,10 @@ if __name__ == "__main__":
     try:
         while True:
             # telling the `target` that we are the `host`
+            # telling the user that we are  router
             spoof(target, host, verbose)
             # telling the `host` that we are the `target`
+           # teling the router that we are user 
             spoof(host, target, verbose)
             # sleep for one second
             time.sleep(1)
